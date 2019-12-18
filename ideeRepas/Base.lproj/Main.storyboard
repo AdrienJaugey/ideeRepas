@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ideeRepas" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jwa-79-Dlg">
+                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="M50-Ni-90R"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Idée Repas" id="oig-D3-L3p">
+                                        <barButtonItem key="backBarButtonItem" title="Quitter" id="VHQ-bA-PLe"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L8z-9z-waR">
+                                <rect key="frame" x="0.0" y="812" width="414" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="s7M-oQ-e7i"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem systemItem="add" id="G8J-K5-e5h"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="IJO-Wg-RrF"/>
+                                    <barButtonItem systemItem="refresh" id="Cgc-W9-puu"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="afP-fD-frC"/>
+                                    <barButtonItem systemItem="search" id="abt-86-M2V"/>
+                                </items>
+                            </toolbar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0gX-fe-kxa">
+                                <rect key="frame" x="0.0" y="94" width="414" height="718"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="0gX-fe-kxa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="D7s-gc-25h"/>
+                            <constraint firstItem="L8z-9z-waR" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="UF4-QL-cUi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="L8z-9z-waR" secondAttribute="bottom" id="UhW-EK-HMS"/>
+                            <constraint firstItem="L8z-9z-waR" firstAttribute="top" secondItem="0gX-fe-kxa" secondAttribute="bottom" id="UjV-qb-P0b"/>
+                            <constraint firstItem="0gX-fe-kxa" firstAttribute="top" secondItem="jwa-79-Dlg" secondAttribute="bottom" id="Zc8-cd-t72"/>
+                            <constraint firstItem="L8z-9z-waR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fac-cW-5mD"/>
+                            <constraint firstItem="jwa-79-Dlg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="iDO-uZ-c3W"/>
+                            <constraint firstItem="jwa-79-Dlg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="oKS-jA-Nj8"/>
+                            <constraint firstItem="jwa-79-Dlg" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="oqT-oB-euI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0gX-fe-kxa" secondAttribute="trailing" id="va1-6O-vVw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-65.217391304347828" y="138.61607142857142"/>
+        </scene>
+    </scenes>
+</document>
