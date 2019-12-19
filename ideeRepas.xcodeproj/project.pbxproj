@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		78F22F1123AB885600098837 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F22F1023AB885600098837 /* TableViewCell.swift */; };
+		78F22F1323AB88C600098837 /* Repas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F22F1223AB88C600098837 /* Repas.swift */; };
+		78F22F1523AB895700098837 /* Enum_TypeRepas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F22F1423AB895700098837 /* Enum_TypeRepas.swift */; };
 		7AD5AEF623AA354E00987625 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD5AEF523AA354E00987625 /* AppDelegate.swift */; };
 		7AD5AEF823AA354E00987625 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD5AEF723AA354E00987625 /* SceneDelegate.swift */; };
 		7AD5AEFA23AA354E00987625 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD5AEF923AA354E00987625 /* ViewController.swift */; };
@@ -16,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		78F22F1023AB885600098837 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		78F22F1223AB88C600098837 /* Repas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Repas.swift; path = Model/Repas.swift; sourceTree = "<group>"; };
+		78F22F1423AB895700098837 /* Enum_TypeRepas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Enum_TypeRepas.swift; path = Model/Enum_TypeRepas.swift; sourceTree = "<group>"; };
 		7AD5AEF223AA354E00987625 /* ideeRepas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ideeRepas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AD5AEF523AA354E00987625 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7AD5AEF723AA354E00987625 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +69,9 @@
 				7AD5AEFE23AA357500987625 /* Assets.xcassets */,
 				7AD5AF0023AA357500987625 /* LaunchScreen.storyboard */,
 				7AD5AF0323AA357500987625 /* Info.plist */,
+				78F22F1023AB885600098837 /* TableViewCell.swift */,
+				78F22F1223AB88C600098837 /* Repas.swift */,
+				78F22F1423AB895700098837 /* Enum_TypeRepas.swift */,
 			);
 			path = ideeRepas;
 			sourceTree = "<group>";
@@ -99,6 +108,7 @@
 				TargetAttributes = {
 					7AD5AEF123AA354D00987625 = {
 						CreatedOnToolsVersion = 11.3;
+						LastSwiftMigration = 1120;
 					};
 				};
 			};
@@ -139,7 +149,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AD5AEFA23AA354E00987625 /* ViewController.swift in Sources */,
+				78F22F1123AB885600098837 /* TableViewCell.swift in Sources */,
+				78F22F1323AB88C600098837 /* Repas.swift in Sources */,
 				7AD5AEF623AA354E00987625 /* AppDelegate.swift in Sources */,
+				78F22F1523AB895700098837 /* Enum_TypeRepas.swift in Sources */,
 				7AD5AEF823AA354E00987625 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,6 +297,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ideeRepas/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -292,6 +306,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ajaugey.ideeRepas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -301,6 +316,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ideeRepas/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
