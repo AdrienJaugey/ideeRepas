@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7886ABD623C3750E008BA3E5 /* Gestionnaire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7886ABD523C3750E008BA3E5 /* Gestionnaire.swift */; };
 		78F22F1123AB885600098837 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F22F1023AB885600098837 /* TableViewCell.swift */; };
 		78F22F1323AB88C600098837 /* Repas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F22F1223AB88C600098837 /* Repas.swift */; };
 		78F22F1523AB895700098837 /* Enum_TypeRepas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F22F1423AB895700098837 /* Enum_TypeRepas.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7886ABD523C3750E008BA3E5 /* Gestionnaire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Gestionnaire.swift; path = Model/Gestionnaire.swift; sourceTree = "<group>"; };
 		78F22F1023AB885600098837 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		78F22F1223AB88C600098837 /* Repas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Repas.swift; path = Model/Repas.swift; sourceTree = "<group>"; };
 		78F22F1423AB895700098837 /* Enum_TypeRepas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Enum_TypeRepas.swift; path = Model/Enum_TypeRepas.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				78F22F1023AB885600098837 /* TableViewCell.swift */,
 				78F22F1223AB88C600098837 /* Repas.swift */,
 				78F22F1423AB895700098837 /* Enum_TypeRepas.swift */,
+				7886ABD523C3750E008BA3E5 /* Gestionnaire.swift */,
 			);
 			path = ideeRepas;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 				7AD5AEFA23AA354E00987625 /* ViewController.swift in Sources */,
 				78F22F1123AB885600098837 /* TableViewCell.swift in Sources */,
 				78F22F1323AB88C600098837 /* Repas.swift in Sources */,
+				7886ABD623C3750E008BA3E5 /* Gestionnaire.swift in Sources */,
 				7AD5AEF623AA354E00987625 /* AppDelegate.swift in Sources */,
 				78F22F1523AB895700098837 /* Enum_TypeRepas.swift in Sources */,
 				7AD5AEF823AA354E00987625 /* SceneDelegate.swift in Sources */,

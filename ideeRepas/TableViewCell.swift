@@ -17,7 +17,6 @@ class TableViewCell: UITableViewCell, UITableViewDataSource {
         <#code#>
     }
     
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
