@@ -8,14 +8,10 @@
 
 import UIKit
 
-class TableViewCell: UITableViewCell, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
-    }
+class RepasCell: UITableViewCell {
+
+    @IBOutlet weak var repasLabel: UILabel!
+    @IBOutlet weak var repasImg: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

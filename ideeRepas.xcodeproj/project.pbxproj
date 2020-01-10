@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		785F733623C8AD2E00A3A43C /* principal.png in Resources */ = {isa = PBXBuildFile; fileRef = 785F733223C8AD2D00A3A43C /* principal.png */; };
+		785F733C23C8AEED00A3A43C /* boisson.png in Resources */ = {isa = PBXBuildFile; fileRef = 785F733B23C8AEED00A3A43C /* boisson.png */; };
+		785F734023C8AF8900A3A43C /* dessert.png in Resources */ = {isa = PBXBuildFile; fileRef = 785F733F23C8AF8900A3A43C /* dessert.png */; };
+		785F734223C8B00500A3A43C /* entree.png in Resources */ = {isa = PBXBuildFile; fileRef = 785F734123C8B00500A3A43C /* entree.png */; };
 		7886ABD623C3750E008BA3E5 /* Gestionnaire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7886ABD523C3750E008BA3E5 /* Gestionnaire.swift */; };
-		78F22F1123AB885600098837 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F22F1023AB885600098837 /* TableViewCell.swift */; };
+		78F22F1123AB885600098837 /* RepasCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F22F1023AB885600098837 /* RepasCell.swift */; };
 		78F22F1323AB88C600098837 /* Repas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F22F1223AB88C600098837 /* Repas.swift */; };
 		78F22F1523AB895700098837 /* Enum_TypeRepas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F22F1423AB895700098837 /* Enum_TypeRepas.swift */; };
 		7AD5AEF623AA354E00987625 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD5AEF523AA354E00987625 /* AppDelegate.swift */; };
@@ -20,8 +24,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		785F733223C8AD2D00A3A43C /* principal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = principal.png; sourceTree = "<group>"; };
+		785F733B23C8AEED00A3A43C /* boisson.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boisson.png; sourceTree = "<group>"; };
+		785F733F23C8AF8900A3A43C /* dessert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dessert.png; path = ../../dessert.png; sourceTree = "<group>"; };
+		785F734123C8B00500A3A43C /* entree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = entree.png; sourceTree = "<group>"; };
 		7886ABD523C3750E008BA3E5 /* Gestionnaire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Gestionnaire.swift; path = Model/Gestionnaire.swift; sourceTree = "<group>"; };
-		78F22F1023AB885600098837 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		78F22F1023AB885600098837 /* RepasCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepasCell.swift; sourceTree = "<group>"; };
 		78F22F1223AB88C600098837 /* Repas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Repas.swift; path = Model/Repas.swift; sourceTree = "<group>"; };
 		78F22F1423AB895700098837 /* Enum_TypeRepas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Enum_TypeRepas.swift; path = Model/Enum_TypeRepas.swift; sourceTree = "<group>"; };
 		7AD5AEF223AA354E00987625 /* ideeRepas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ideeRepas.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,6 +53,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		785F733A23C8AD4C00A3A43C /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				785F733F23C8AF8900A3A43C /* dessert.png */,
+				785F733B23C8AEED00A3A43C /* boisson.png */,
+				785F733223C8AD2D00A3A43C /* principal.png */,
+				785F734123C8B00500A3A43C /* entree.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		7AD5AEE923AA354D00987625 = {
 			isa = PBXGroup;
 			children = (
@@ -69,9 +88,10 @@
 				7AD5AEF923AA354E00987625 /* ViewController.swift */,
 				7AD5AEFB23AA354F00987625 /* Main.storyboard */,
 				7AD5AEFE23AA357500987625 /* Assets.xcassets */,
+				785F733A23C8AD4C00A3A43C /* Images */,
 				7AD5AF0023AA357500987625 /* LaunchScreen.storyboard */,
 				7AD5AF0323AA357500987625 /* Info.plist */,
-				78F22F1023AB885600098837 /* TableViewCell.swift */,
+				78F22F1023AB885600098837 /* RepasCell.swift */,
 				78F22F1223AB88C600098837 /* Repas.swift */,
 				78F22F1423AB895700098837 /* Enum_TypeRepas.swift */,
 				7886ABD523C3750E008BA3E5 /* Gestionnaire.swift */,
@@ -140,7 +160,11 @@
 			files = (
 				7AD5AF0223AA357500987625 /* LaunchScreen.storyboard in Resources */,
 				7AD5AEFF23AA357500987625 /* Assets.xcassets in Resources */,
+				785F733C23C8AEED00A3A43C /* boisson.png in Resources */,
+				785F733623C8AD2E00A3A43C /* principal.png in Resources */,
+				785F734023C8AF8900A3A43C /* dessert.png in Resources */,
 				7AD5AEFD23AA354F00987625 /* Main.storyboard in Resources */,
+				785F734223C8B00500A3A43C /* entree.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,7 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AD5AEFA23AA354E00987625 /* ViewController.swift in Sources */,
-				78F22F1123AB885600098837 /* TableViewCell.swift in Sources */,
+				78F22F1123AB885600098837 /* RepasCell.swift in Sources */,
 				78F22F1323AB88C600098837 /* Repas.swift in Sources */,
 				7886ABD623C3750E008BA3E5 /* Gestionnaire.swift in Sources */,
 				7AD5AEF623AA354E00987625 /* AppDelegate.swift in Sources */,
@@ -302,7 +326,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ideeRepas/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -310,6 +336,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ajaugey.ideeRepas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -321,7 +348,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ideeRepas/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -329,6 +358,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ajaugey.ideeRepas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

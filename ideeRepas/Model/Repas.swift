@@ -10,41 +10,45 @@ import Foundation
 
 class Repas {
     
-    private var nom: String {
+    private var _nom: String
+    var nom: String{
         get {
-            return self.nom
+            return self._nom
         }
         set {
             if !newValue.isEmpty {
-                self.nom = newValue
+                self._nom = newValue
             }
         }
     }
     
-    private var type: Enum_TypeRepas {
-        get { return self.type }
-        set { self.type = newValue }
+    private var _type: Enum_TypeRepas
+    var type: Enum_TypeRepas {
+        get { return self._type }
+        set { self._type = newValue }
     }
     
-    private var dureePreparation: Int {
-        get { return self.dureePreparation }
-        set { if newValue >= 0 { self.dureePreparation = newValue } }
+    private var _dureePreparation: Int
+    var dureePreparation: Int {
+        get { return self._dureePreparation }
+        set { if newValue >= 0 { self._dureePreparation = newValue } }
     }
     
-    private var dureeCuisson: Int {
-        get { return self.dureeCuisson }
-        set { if newValue >= 0 { self.dureeCuisson = newValue } }
+    private var _dureeCuisson: Int
+    var dureeCuisson: Int {
+        get { return self._dureeCuisson }
+        set { if newValue >= 0 { self._dureeCuisson = newValue } }
     }
     
-    private var ingredients: [String]
+    var ingredients = [String]()
     
-    private var etapes: [String]
+    var etapes = [String]()
     
     init(nom: String, type: Enum_TypeRepas, dureePreparation: Int, dureeCuisson: Int){
-        self.nom = nom
-        self.type = type
-        self.dureePreparation = dureePreparation
-        self.dureeCuisson = dureeCuisson
+        self._nom = nom
+        self._type = type
+        self._dureePreparation = dureePreparation
+        self._dureeCuisson = dureeCuisson
     }
     
     func getIngredients() -> [String] {
@@ -72,10 +76,10 @@ class Repas {
     }
     
     func getSimpleDescritption() -> String {
-        var desc = self.type.description + " : " + self.nom + "\n"
+        var desc = /*self.type.description +*/ " : " + self.nom + "\n"
         if ingredients.count > 0 {
             desc += "Ingredient" + (ingredients.count > 1 ? "s" : "") + " : "
-            for i in 0...ingredients.count {
+            for i in 0..<ingredients.count {
                 desc += ingredients[i] + ((i < ingredients.count - 1) ? ", " : "")
             }
         }

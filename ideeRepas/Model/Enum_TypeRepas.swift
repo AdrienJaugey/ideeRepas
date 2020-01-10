@@ -6,21 +6,21 @@
 //  Copyright © 2019 Adrien Jaugey. All rights reserved.
 //
 
-enum Enum_TypeRepas {
-    case entree, principal, dessert, boisson, autre
+enum Enum_TypeRepas : String {
+    case entree = "entree", principal = "principal", dessert = "dessert", boisson = "boisson", autre = "autre"
     
     public var description: String {
-        switch "\(self)" {
-        case "entree":
-            return "Entrée"
-        case "principal":
-            return "Plat Principal"
-        case "dessert":
-            return "Dessert"
-        case "boisson":
-            return "Boisson"
-        case "autre":
-            return "Autre"
+        switch self {
+        case .entree:
+            return "entree"
+        case .principal:
+            return "principal"
+        case .dessert:
+            return "dessert"
+        case .boisson:
+            return "boisson"
+        case .autre:
+            return "autre"
         default:
             return "\(self)"
         }

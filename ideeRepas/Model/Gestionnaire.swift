@@ -9,14 +9,14 @@
 import Foundation
 
 class Gestionnaire {
-    private let instance = Gestionnaire()
-    private let repas : [Repas]
+    private static let instance = Gestionnaire()
+    private var repas : [Repas]
     
     private init(){
         self.repas = [Repas]()
     }
     
-    func get() -> Gestionnaire {
+    static func get() -> Gestionnaire {
         return instance
     }
     
@@ -28,7 +28,7 @@ class Gestionnaire {
         return repas.count
     }
     
-    func addRepas(repas: Repas){
-        
+    func addRepas(_ plat: Repas){
+        self.repas.append(plat)
     }
 }

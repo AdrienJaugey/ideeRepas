@@ -43,24 +43,24 @@
                                 <rect key="frame" x="0.0" y="94" width="414" height="718"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="repasCell" id="ZBo-v0-iQZ">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="repasCell" id="ZBo-v0-iQZ" customClass="RepasCell" customModule="ideeRepas" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="100.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZBo-v0-iQZ" id="BMJ-Z2-6pa">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="100.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="9nt-yj-Obx">
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="9nt-yj-Obx" userLabel="StackView">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="100.5"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zrh-lQ-5ve">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zrh-lQ-5ve" userLabel="Image Repas">
                                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="100" id="caV-cg-Ojz"/>
                                                                 <constraint firstAttribute="width" constant="100" id="u2T-Sk-n9l"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yKM-7b-FHz">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label Repas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yKM-7b-FHz">
                                                             <rect key="frame" x="103" y="0.0" width="311" height="100.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -76,6 +76,11 @@
                                                 <constraint firstAttribute="trailing" secondItem="9nt-yj-Obx" secondAttribute="trailing" id="q5p-zr-S4j"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="repasImg" destination="zrh-lQ-5ve" id="Nli-cf-ocb"/>
+                                            <outlet property="repasLabel" destination="yKM-7b-FHz" id="Gca-94-h84"/>
+                                            <segue destination="LI8-HR-Cwr" kind="show" id="DqF-aO-hHt"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -95,6 +100,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="listeRepas" destination="0gX-fe-kxa" id="ova-pD-DBF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -105,11 +113,12 @@
             <objects>
                 <viewController id="LI8-HR-Cwr" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dyA-9v-Yc1">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="YmM-A0-SZ3"/>
                     </view>
+                    <navigationItem key="navigationItem" id="yGI-BE-hXn"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yaV-AG-D4f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
