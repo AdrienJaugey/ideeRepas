@@ -11,23 +11,26 @@ import UIKit
 class ShowRepasVC: UIViewController {
 
     var platID: Int?
-    var repas: Repas?
+    var repas: Repas!
+    
+    @IBOutlet weak var navigationBar: UINavigationBar!
+    
+    @IBAction func Retour(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        repas = Gestionnaire.get().getRepas(at: platID!)
+        navigationBar.topItem?.title = repas.nom
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        if segue.identifier == "edit" {
+            let editVC = segue.destination as! EditRepasVC
+            editVC.platID = platID
+        }
     }
-    */
 
 }

@@ -11,21 +11,28 @@ import UIKit
 class EditRepasVC: UIViewController {
     
     var platID: Int?
-    var repas: Repas?
+    var repas: Repas!
 
     @IBOutlet weak var navigationBar: UINavigationBar!
+    
+    @IBAction func Retour(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         if let id = platID {
-            self.title = "Editer Plat"
             repas = Gestionnaire.get().getRepas(at: id)
+            navigationBar.topItem?.title = "Editer " + repas.nom
             print(repas!.getSimpleDescritption())
         } else {
-            self.title = "Nouveau Plat"
-            
+            navigationBar.topItem?.title = "Nouveau Plat"
         }
         // Do any additional setup after loading the view.
     }
+    
+    /*func getRepas() -> Repas? {
+        
+    }*/
 
 }

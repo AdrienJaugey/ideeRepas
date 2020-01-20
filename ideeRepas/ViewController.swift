@@ -66,12 +66,9 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
     
     @IBAction func unwindToMainVC(_ unwindSegue: UIStoryboardSegue) {
-        let sourceViewController = unwindSegue.source as! ShowRepasVC
-        if unwindSegue.identifier == "back" {
-            sourceViewController.dismiss(animated: true, completion: nil)
-            print("back")
-        } else if unwindSegue.identifier == "save" {
-            print("save")
+        if unwindSegue.identifier == "save" {
+            let sourceVC = unwindSegue.source as! EditRepasVC
+            
         }
     }
 
