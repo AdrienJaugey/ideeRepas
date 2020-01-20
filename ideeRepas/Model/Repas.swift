@@ -11,7 +11,7 @@ import Foundation
 class Repas {
     
     private var _nom: String
-    var nom: String{
+    var nom: String {
         get {
             return self._nom
         }
