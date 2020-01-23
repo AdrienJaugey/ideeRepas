@@ -221,7 +221,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SAT-8R-YqN">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SAT-8R-YqN" userLabel="nomLabel">
                                                 <rect key="frame" x="202" y="0.0" width="202" height="107"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -273,7 +273,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="5" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uvm-Gb-Zxz">
+                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="5" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uvm-Gb-Zxz" userLabel="dureeCuisson">
                                                 <rect key="frame" x="202" y="0.0" width="202" height="107"/>
                                                 <locale key="locale" localeIdentifier="fr_FR"/>
                                             </datePicker>
@@ -288,7 +288,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="5" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqP-rE-aqt">
+                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="5" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqP-rE-aqt" userLabel="dureeRepos">
                                                 <rect key="frame" x="202" y="0.0" width="202" height="107"/>
                                                 <locale key="locale" localeIdentifier="fr_FR"/>
                                             </datePicker>
@@ -343,7 +343,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="yGI-BE-hXn"/>
                     <connections>
+                        <outlet property="dureeCuisson" destination="uvm-Gb-Zxz" id="12X-5E-PX3"/>
+                        <outlet property="dureePrepa" destination="5kK-nY-hOp" id="b6t-e7-ghP"/>
+                        <outlet property="dureeRepos" destination="cqP-rE-aqt" id="zi2-lj-ZrC"/>
+                        <outlet property="etapesLabel" destination="cUm-2O-w7y" id="gUt-Ux-sbs"/>
+                        <outlet property="ingredientsLabel" destination="74W-Gs-zZ7" id="8x0-0r-adG"/>
                         <outlet property="navigationBar" destination="gmk-A8-rlt" id="Pqe-63-MtU"/>
+                        <outlet property="nomLabel" destination="SAT-8R-YqN" id="C7C-JY-Ecb"/>
                         <outlet property="typeRepasPicker" destination="syt-el-ZX4" id="pz5-8U-wky"/>
                     </connections>
                 </viewController>

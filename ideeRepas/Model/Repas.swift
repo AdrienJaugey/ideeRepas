@@ -40,15 +40,22 @@ class Repas {
         set { if newValue >= 0 { self._dureeCuisson = newValue } }
     }
     
+    private var _dureeRepos: Int
+    var dureeRepos: Int {
+        get { return self._dureeRepos }
+        set { if newValue >= 0 { self._dureeRepos = newValue } }
+    }
+    
     var ingredients = [String]()
     
     var etapes = [String]()
     
-    init(nom: String, type: Enum_TypeRepas, dureePreparation: Int, dureeCuisson: Int){
+    init(nom: String, type: Enum_TypeRepas, dureePreparation: Int, dureeCuisson: Int, dureeRepos: Int){
         self._nom = nom
         self._type = type
         self._dureePreparation = dureePreparation
         self._dureeCuisson = dureeCuisson
+        self._dureeRepos = dureeRepos
     }
     
     func getIngredients() -> [String] {
@@ -76,7 +83,7 @@ class Repas {
     }
     
     func getSimpleDescritption() -> String {
-        var desc = /*self.type.description +*/ " : " + self.nom + "\n"
+        var desc = self.type.description + " : " + self.nom + "\n"
         if ingredients.count > 0 {
             desc += "Ingredient" + (ingredients.count > 1 ? "s" : "") + " : "
             for i in 0..<ingredients.count {

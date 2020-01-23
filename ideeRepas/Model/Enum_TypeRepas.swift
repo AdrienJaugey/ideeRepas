@@ -14,6 +14,7 @@ enum Enum_TypeRepas : String {
     case autre = "autre"
     
     static let allValues = [entree, principal, dessert, boisson, autre]
+    static let allFullString = ["Entrée", "Plat Principal", "Dessert", "Boisson", "Autre"]
     
     public var description: String {
         switch self {
@@ -27,8 +28,6 @@ enum Enum_TypeRepas : String {
             return "boisson"
         case .autre:
             return "autre"
-        default:
-            return "\(self)"
         }
     }
     

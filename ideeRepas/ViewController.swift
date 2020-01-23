@@ -37,7 +37,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        let test = Repas(nom: "Double Ration de frite", type: Enum_TypeRepas.principal, dureePreparation: 0, dureeCuisson: 10)
+        let test = Repas(nom: "Double Ration de frite", type: Enum_TypeRepas.principal, dureePreparation: 0, dureeCuisson: 10, dureeRepos: 0)
         test.addIngredient(ingredient: "Patate")
         test.addIngredient(ingredient: "Sel")
         test.addEtape(description: "Ouvrir le sachet de frites industrielles.")
@@ -47,13 +47,24 @@ class ViewController: UIViewController, UITableViewDataSource {
         print(test.getSimpleDescritption())
         gest.addRepas(test)
         
-        let test2 = Repas(nom: "La bonne bouillabaisse", type: Enum_TypeRepas.principal, dureePreparation: 15, dureeCuisson: 60)
+        let test2 = Repas(nom: "La bonne bouillabaisse", type: Enum_TypeRepas.principal, dureePreparation: 15, dureeCuisson: 60, dureeRepos: 20)
         test2.addIngredient(ingredient: "pommes de terre")
         test2.addIngredient(ingredient: "Poissons de roche")
         test2.addEtape(description: "Balancer le tout par la fenêtre")
         print(test.getSimpleDescritption())
         gest.addRepas(test2)
         
+        let test3 = Repas(nom: "Tiramisu", type: .dessert, dureePreparation: 30, dureeCuisson: 0, dureeRepos: 240)
+        test3.addIngredient(ingredient: "Mascarpone")
+        test3.addIngredient(ingredient: "Sucre")
+        test3.addIngredient(ingredient: "Oeufs")
+        test3.addIngredient(ingredient: "Biscuits Cuillères")
+        test3.addIngredient(ingredient: "Café")
+        test3.addIngredient(ingredient: "Cacao")
+        test3.addEtape(description: "Mélanger la mascarpone et le sucre")
+        test3.addEtape(description: "Battre les blancs en neige")
+        test3.addEtape(description: "Mélanger délicatement avec la préparation")
+        gest.addRepas(test3)
         self.listeRepas.dataSource = self
     }
     
