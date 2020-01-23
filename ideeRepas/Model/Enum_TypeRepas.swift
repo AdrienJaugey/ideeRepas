@@ -7,7 +7,13 @@
 //
 
 enum Enum_TypeRepas : String {
-    case entree = "entree", principal = "principal", dessert = "dessert", boisson = "boisson", autre = "autre"
+    case entree = "entree"
+    case principal = "principal"
+    case dessert = "dessert"
+    case boisson = "boisson"
+    case autre = "autre"
+    
+    static let allValues = [entree, principal, dessert, boisson, autre]
     
     public var description: String {
         switch self {

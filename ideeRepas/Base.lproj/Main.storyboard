@@ -213,32 +213,32 @@
                                 <rect key="frame" x="5" y="55" width="404" height="748"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="EPC-Iy-V4h" userLabel="nom">
-                                        <rect key="frame" x="0.0" y="0.0" width="404" height="149.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="404" height="107"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nom :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U0y-BA-o2D">
-                                                <rect key="frame" x="0.0" y="0.0" width="202" height="149.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="202" height="107"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SAT-8R-YqN">
-                                                <rect key="frame" x="202" y="0.0" width="202" height="149.5"/>
+                                                <rect key="frame" x="202" y="0.0" width="202" height="107"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="gtw-yy-cLI" userLabel="type">
-                                        <rect key="frame" x="0.0" y="149.5" width="404" height="149.5"/>
+                                        <rect key="frame" x="0.0" y="107" width="404" height="106.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TII-RV-zMv">
-                                                <rect key="frame" x="0.0" y="0.0" width="202" height="149.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="202" height="106.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="syt-el-ZX4">
-                                                <rect key="frame" x="202" y="0.0" width="202" height="149.5"/>
+                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="syt-el-ZX4" userLabel="typePicker">
+                                                <rect key="frame" x="202" y="0.0" width="202" height="106.5"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="Entrée" value="Enum_TypeRepas.entree"/>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="Plat Principal" value="Enum_TypeRepas.principal"/>
@@ -250,48 +250,80 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="p5G-Is-VQG" userLabel="dureePrepa">
-                                        <rect key="frame" x="0.0" y="299" width="404" height="150"/>
+                                        <rect key="frame" x="0.0" y="213.5" width="404" height="107"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Durée Préparation :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IqM-QG-1RD">
-                                                <rect key="frame" x="0.0" y="0.0" width="202" height="150"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="202" height="107"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="5" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5kK-nY-hOp">
-                                                <rect key="frame" x="202" y="0.0" width="202" height="150"/>
+                                                <rect key="frame" x="202" y="0.0" width="202" height="107"/>
                                                 <locale key="locale" localeIdentifier="fr_FR"/>
                                             </datePicker>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="x7f-fO-vv0" userLabel="dureeCuisson">
-                                        <rect key="frame" x="0.0" y="449" width="404" height="149.5"/>
+                                        <rect key="frame" x="0.0" y="320.5" width="404" height="107"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Durée Cuisson :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RwB-FC-hx5">
-                                                <rect key="frame" x="0.0" y="0.0" width="202" height="149.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="202" height="107"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="5" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uvm-Gb-Zxz">
-                                                <rect key="frame" x="202" y="0.0" width="202" height="149.5"/>
+                                                <rect key="frame" x="202" y="0.0" width="202" height="107"/>
                                                 <locale key="locale" localeIdentifier="fr_FR"/>
                                             </datePicker>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="iXL-Du-8Ug" userLabel="dureeRepos">
-                                        <rect key="frame" x="0.0" y="598.5" width="404" height="149.5"/>
+                                        <rect key="frame" x="0.0" y="427.5" width="404" height="107"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Durée Repos :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggC-MM-U5Z">
-                                                <rect key="frame" x="0.0" y="0.0" width="202" height="149.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="202" height="107"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="5" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqP-rE-aqt">
-                                                <rect key="frame" x="202" y="0.0" width="202" height="149.5"/>
+                                                <rect key="frame" x="202" y="0.0" width="202" height="107"/>
                                                 <locale key="locale" localeIdentifier="fr_FR"/>
                                             </datePicker>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Lb0-iS-80S" userLabel="ingredients">
+                                        <rect key="frame" x="0.0" y="534.5" width="404" height="106.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingrédients :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JOQ-qM-TSd">
+                                                <rect key="frame" x="0.0" y="0.0" width="202" height="106.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="74W-Gs-zZ7" userLabel="ingredientsLabel">
+                                                <rect key="frame" x="202" y="0.0" width="202" height="106.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="oS5-PD-EQo" userLabel="etapes">
+                                        <rect key="frame" x="0.0" y="641" width="404" height="107"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Etapes :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1nN-Cl-0Oa">
+                                                <rect key="frame" x="0.0" y="0.0" width="202" height="107"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cUm-2O-w7y" userLabel="etapesLabel">
+                                                <rect key="frame" x="202" y="0.0" width="202" height="107"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -312,6 +344,7 @@
                     <navigationItem key="navigationItem" id="yGI-BE-hXn"/>
                     <connections>
                         <outlet property="navigationBar" destination="gmk-A8-rlt" id="Pqe-63-MtU"/>
+                        <outlet property="typeRepasPicker" destination="syt-el-ZX4" id="pz5-8U-wky"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yaV-AG-D4f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -8,12 +8,27 @@
 
 import UIKit
 
-class EditRepasVC: UIViewController {
+class EditRepasVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    var types = Enum_TypeRepas.allValues
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return types.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return types[row].description
+    }
     
     var platID: Int?
     var repas: Repas!
 
     @IBOutlet weak var navigationBar: UINavigationBar!
+    @IBOutlet weak var typeRepasPicker: UIPickerView!
     
     @IBAction func Retour(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
@@ -28,7 +43,8 @@ class EditRepasVC: UIViewController {
         } else {
             navigationBar.topItem?.title = "Nouveau Plat"
         }
-        // Do any additional setup after loading the view.
+        self.typeRepasPicker.delegate = self
+        self.typeRepasPicker.dataSource = self
     }
     
     /*func getRepas() -> Repas? {
