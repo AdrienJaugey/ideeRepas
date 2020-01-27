@@ -31,8 +31,8 @@ class EditRepasVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     @IBOutlet weak var dureePrepa: UIDatePicker!
     @IBOutlet weak var dureeCuisson: UIDatePicker!
     @IBOutlet weak var dureeRepos: UIDatePicker!
-    @IBOutlet weak var ingredientsLabel: UITextField!
-    @IBOutlet weak var etapesLabel: UITextField!
+    @IBOutlet weak var ingredientsTV: UITextView!
+    @IBOutlet weak var etapesTV: UITextView!
     
     @IBAction func Retour(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
@@ -53,8 +53,16 @@ class EditRepasVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
             dureePrepa.countDownDuration = TimeInterval(repas.dureePreparation * 60)
             dureeCuisson.countDownDuration = TimeInterval(repas.dureeCuisson * 60)
             dureeRepos.countDownDuration = TimeInterval(repas.dureeRepos * 60)
-            ingredientsLabel.text = "\(repas.ingredients)"
-            etapesLabel.text = "\(repas.etapes)"
+            var textIngredient = ""
+            for ingre in repas.ingredients {
+                textIngredient += ingre + "\n"
+            }
+            ingredientsTV.text = textIngredient
+            var textEtapes = ""
+            for etape in repas.etapes {
+                textEtapes += etape + "\n"
+            }
+            etapesTV.text = textEtapes
         } else {
             navigationBar.topItem?.title = "Nouveau Plat"
         }
