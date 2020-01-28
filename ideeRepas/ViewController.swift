@@ -24,10 +24,8 @@ class ViewController: UIViewController, UITableViewDataSource {
         let temp = gest.getRepas(at: row)
         
         let dark = self.traitCollection.userInterfaceStyle == .dark
-        print(dark ? "Thème Sombre" : "Thème Clair")
-        
-        print((temp?.type.description ?? "principal") + (dark ? "_dark" : "") + ".png")
-        cell.repasImg.image = UIImage(named: (temp?.type.description ?? "principal") + ".png")
+        let img = "\(temp?.type ?? .principal)" + (dark ? "_dark" : "") + ".png"
+        cell.repasImg.image = UIImage(named: img)
         cell.repasLabel.text = temp?.nom
         
         return cell
@@ -79,9 +77,17 @@ class ViewController: UIViewController, UITableViewDataSource {
     @IBAction func unwindToMainVC(_ unwindSegue: UIStoryboardSegue) {
         if unwindSegue.identifier == "save" {
             let sourceVC = unwindSegue.source as! EditRepasVC
-            
+            if let platId = sourceVC.platID {
+                print(platId)
+            } else {
+                
+            }
         }
     }
-
+    
+    @IBAction func refreshTableView(_ sender: Any) {
+        listeRepas.reloadData()
+    }
+    
 }
 

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class Gestionnaire {
     private static let instance = Gestionnaire()

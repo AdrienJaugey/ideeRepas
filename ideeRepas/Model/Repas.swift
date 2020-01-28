@@ -83,7 +83,7 @@ class Repas {
     }
     
     func getSimpleDescritption() -> String {
-        var desc = self.type.description + " : " + self.nom + "\n"
+        var desc = self.type.rawValue + " : " + self.nom + "\n"
         if ingredients.count > 0 {
             desc += "Ingredient" + (ingredients.count > 1 ? "s" : "") + " : "
             for i in 0..<ingredients.count {

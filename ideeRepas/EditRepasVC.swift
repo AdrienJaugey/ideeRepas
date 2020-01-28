@@ -45,7 +45,7 @@ class EditRepasVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         
         if let id = platID {
             repas = Gestionnaire.get().getRepas(at: id)
-            navigationBar.topItem?.title = "Editer " + repas.nom
+            navigationBar.topItem?.title = "Editer Repas"//+repas.nom
             print(repas!.getSimpleDescritption())
             nomLabel.text = repas.nom
             let index = Enum_TypeRepas.allValues.firstIndex(of: repas.type)!
