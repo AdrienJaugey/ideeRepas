@@ -88,5 +88,15 @@ class ShowRepasVC: UIViewController {
         }
     }
     
+    @objc func actualiser(){
+        let dark = self.traitCollection.userInterfaceStyle == .dark
+        if let img = typeImage {
+            img.image = UIImage(named: "\(repas.type)" + (dark ? "_dark" : "") + ".png")
+            let clockPicture = "UI_icon_clock" + (dark ? "_dark" : "") + ".png"
+            for clock in clockImage {
+                clock.image = UIImage(named: clockPicture)
+            }
+        }
+    }
 
 }

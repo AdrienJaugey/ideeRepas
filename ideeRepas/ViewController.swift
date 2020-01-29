@@ -34,6 +34,10 @@ class ViewController: UIViewController, UITableViewDataSource {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(actualiser), name: UIApplication.willEnterForegroundNotification, object: nil)
+        
         // Do any additional setup after loading the view.
         let test = Repas(nom: "Double Ration de frite", type: Enum_TypeRepas.principal, dureePreparation: 0, dureeCuisson: 10, dureeRepos: 0)
         test.addIngredient(ingredient: "Patate")
@@ -67,11 +71,11 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if segue.identifier == "showRepas" {
-                let detailsRepasVC = segue.destination as! ShowRepasVC
-                let row = listeRepas.indexPathForSelectedRow!.row
-                detailsRepasVC.platID = row
-            }
+        if segue.identifier == "showRepas" {
+            let showVC = (segue.destination as! ShowRepasVC)
+            let row = listeRepas.indexPathForSelectedRow!.row
+            showVC.platID = row
+        }
     }
     
     @IBAction func unwindToMainVC(_ unwindSegue: UIStoryboardSegue) {
@@ -102,14 +106,15 @@ class ViewController: UIViewController, UITableViewDataSource {
             }
             repas.etapes = etapes
             sourceVC.dismiss(animated: true) {
-                self.listeRepas.reloadData()
+                self.actualiser()
             }
         }
     }
     
-    @IBAction func refreshTableView(_ sender: Any) {
-        listeRepas.reloadData()
+    @objc func actualiser(){
+        if let tv = listeRepas {
+            tv.reloadData()
+        }
     }
-    
 }
 

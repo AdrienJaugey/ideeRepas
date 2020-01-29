@@ -50,6 +50,8 @@ class EditRepasVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ingredientsTV.layer.borderColor = CGColor(srgbRed: 192, green: 192, blue: 192, alpha: 50)
+        etapesTV.layer.borderColor = CGColor(srgbRed: 192, green: 192, blue: 192, alpha: 50)
         self.typeRepasPicker.delegate = self
         self.typeRepasPicker.dataSource = self
         
