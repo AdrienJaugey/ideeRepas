@@ -48,7 +48,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         let test2 = Repas(nom: "La bonne bouillabaisse", type: Enum_TypeRepas.principal, dureePreparation: 15, dureeCuisson: 60, dureeRepos: 20)
         test2.addIngredient(ingredient: "pommes de terre")
         test2.addIngredient(ingredient: "Poissons de roche")
-        test2.addEtape(description: "Balancer le tout par la fenêtre")
+        //test2.addEtape(description: "Balancer le tout par la fenêtre")
         print(test.getSimpleDescritption())
         gest.addRepas(test2)
         
