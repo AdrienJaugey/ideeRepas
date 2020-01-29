@@ -24,18 +24,28 @@ class EditRepasVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     
     var platID: Int?
     var repas: Repas!
+    var typeRepas = Enum_TypeRepas.principal
 
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var typeRepasPicker: UIPickerView!
     @IBOutlet weak var nomLabel: UITextField!
     @IBOutlet weak var dureePrepa: UIDatePicker!
+    @IBOutlet weak var prepaSwitch: UISwitch!
     @IBOutlet weak var dureeCuisson: UIDatePicker!
+    @IBOutlet weak var cuissonSwitch: UISwitch!
     @IBOutlet weak var dureeRepos: UIDatePicker!
+    @IBOutlet weak var reposSwitch: UISwitch!
     @IBOutlet weak var ingredientsTV: UITextView!
     @IBOutlet weak var etapesTV: UITextView!
     
     @IBAction func Retour(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func toggleTimer(_ sender: Any) {
+        dureePrepa.isEnabled = prepaSwitch.isOn
+        dureeCuisson.isEnabled = cuissonSwitch.isOn
+        dureeRepos.isEnabled = reposSwitch.isOn
     }
     
     override func viewDidLoad() {
@@ -45,14 +55,29 @@ class EditRepasVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         
         if let id = platID {
             repas = Gestionnaire.get().getRepas(at: id)
-            navigationBar.topItem?.title = "Editer Repas"//+repas.nom
+            navigationBar.topItem?.title = "Editer Repas"
             print(repas!.getSimpleDescritption())
             nomLabel.text = repas.nom
             let index = Enum_TypeRepas.allValues.firstIndex(of: repas.type)!
             typeRepasPicker.selectRow(index, inComponent: 0, animated: true)
-            dureePrepa.countDownDuration = TimeInterval(repas.dureePreparation * 60)
-            dureeCuisson.countDownDuration = TimeInterval(repas.dureeCuisson * 60)
-            dureeRepos.countDownDuration = TimeInterval(repas.dureeRepos * 60)
+            if(repas.dureePreparation > 0){
+                dureePrepa.countDownDuration = TimeInterval(repas.dureePreparation * 60)
+            } else {
+                dureePrepa.isEnabled = false
+                prepaSwitch.isOn = false
+            }
+            if(repas.dureeCuisson > 0){
+                dureeCuisson.countDownDuration = TimeInterval(repas.dureeCuisson * 60)
+            } else {
+                dureePrepa.isEnabled = false
+                cuissonSwitch.isOn = false
+            }
+            if(repas.dureeRepos > 0){
+                dureeRepos.countDownDuration = TimeInterval(repas.dureeRepos * 60)
+            }else {
+                dureeRepos.isEnabled = false
+                reposSwitch.isOn = false
+            }
             var textIngredient = ""
             for ingre in repas.ingredients {
                 textIngredient += ingre + "\n"
@@ -65,6 +90,12 @@ class EditRepasVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
             etapesTV.text = textEtapes
         } else {
             navigationBar.topItem?.title = "Nouveau Plat"
+            prepaSwitch.isOn = false
+            dureePrepa.isEnabled = false
+            cuissonSwitch.isOn = false
+            dureeCuisson.isEnabled = false
+            reposSwitch.isOn = false
+            dureeCuisson.isEnabled = false
         }
         
     }

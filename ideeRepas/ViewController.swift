@@ -77,10 +77,32 @@ class ViewController: UIViewController, UITableViewDataSource {
     @IBAction func unwindToMainVC(_ unwindSegue: UIStoryboardSegue) {
         if unwindSegue.identifier == "save" {
             let sourceVC = unwindSegue.source as! EditRepasVC
+            var repas = Repas()
             if let platId = sourceVC.platID {
                 print(platId)
+                repas = Gestionnaire.get().getRepas(at: platId)!
             } else {
-                
+                Gestionnaire.get().addRepas(repas)
+            }
+            repas.nom = sourceVC.nomLabel.text!
+            repas.type = Enum_TypeRepas.allValues[sourceVC.typeRepasPicker.selectedRow(inComponent: 0)]
+            repas.dureePreparation = Int(sourceVC.prepaSwitch.isOn ? sourceVC.dureePrepa.countDownDuration / 60: 0)
+            repas.dureeCuisson = Int(sourceVC.cuissonSwitch.isOn ? sourceVC.dureeCuisson.countDownDuration / 60: 0)
+            repas.dureeRepos = Int(sourceVC.reposSwitch.isOn ? sourceVC.dureeRepos.countDownDuration / 60 : 0)
+            var ingredients = [String]()
+            let ingredientsTexte = sourceVC.ingredientsTV.text.split(separator: "\n")
+            for ing in ingredientsTexte {
+                ingredients.append(String(ing))
+            }
+            repas.ingredients = ingredients
+            var etapes = [String]()
+            let etapesTexte = sourceVC.etapesTV.text.split(separator: "\n")
+            for etape in etapesTexte {
+                etapes.append(String(etape))
+            }
+            repas.etapes = etapes
+            sourceVC.dismiss(animated: true) {
+                self.listeRepas.reloadData()
             }
         }
     }

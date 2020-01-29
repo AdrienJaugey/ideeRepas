@@ -450,13 +450,6 @@
                                             </label>
                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="syt-el-ZX4" userLabel="typePicker">
                                                 <rect key="frame" x="202" y="0.0" width="202" height="60"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="Entrée" value="Enum_TypeRepas.entree"/>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="Plat Principal" value="Enum_TypeRepas.principal"/>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="Dessert" value="Enum_TypeRepas.dessert"/>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="Boisson" value="Enum_TypeRepas.boisson"/>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="Autre" value="Enum_TypeRepas.autre"/>
-                                                </userDefinedRuntimeAttributes>
                                             </pickerView>
                                         </subviews>
                                         <constraints>
@@ -466,12 +459,28 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="p5G-Is-VQG" userLabel="dureePrepa">
                                         <rect key="frame" x="0.0" y="110" width="404" height="100"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Durée Préparation :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IqM-QG-1RD">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="OFd-9s-46e">
                                                 <rect key="frame" x="0.0" y="0.0" width="202" height="100"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Durée Préparation :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IqM-QG-1RD">
+                                                        <rect key="frame" x="0.0" y="0.0" width="202" height="40"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SXG-E7-blD" userLabel="prepaSwitch">
+                                                        <rect key="frame" x="0.0" y="40" width="204" height="60"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="prepaSwitch"/>
+                                                        <connections>
+                                                            <action selector="toggleTimer:" destination="LI8-HR-Cwr" eventType="valueChanged" id="zrw-yw-7Nk"/>
+                                                        </connections>
+                                                    </switch>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="IqM-QG-1RD" secondAttribute="trailing" id="Bo4-dY-Yfo"/>
+                                                    <constraint firstItem="IqM-QG-1RD" firstAttribute="leading" secondItem="OFd-9s-46e" secondAttribute="leading" id="ZE7-Tu-Qdc"/>
+                                                </constraints>
+                                            </stackView>
                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="5" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5kK-nY-hOp">
                                                 <rect key="frame" x="202" y="0.0" width="202" height="100"/>
                                                 <locale key="locale" localeIdentifier="fr_FR"/>
@@ -484,12 +493,24 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="x7f-fO-vv0" userLabel="dureeCuisson">
                                         <rect key="frame" x="0.0" y="210" width="404" height="100"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Durée Cuisson :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RwB-FC-hx5">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="9BS-z5-nhQ">
                                                 <rect key="frame" x="0.0" y="0.0" width="202" height="100"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Durée Cuisson :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RwB-FC-hx5">
+                                                        <rect key="frame" x="0.0" y="0.0" width="202" height="40"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gmC-8H-4co" userLabel="cuissonSwitch">
+                                                        <rect key="frame" x="0.0" y="40" width="204" height="60"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="cuissonSwitch"/>
+                                                        <connections>
+                                                            <action selector="toggleTimer:" destination="LI8-HR-Cwr" eventType="valueChanged" id="gPb-5o-aUN"/>
+                                                        </connections>
+                                                    </switch>
+                                                </subviews>
+                                            </stackView>
                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="5" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uvm-Gb-Zxz" userLabel="dureeCuisson">
                                                 <rect key="frame" x="202" y="0.0" width="202" height="100"/>
                                                 <locale key="locale" localeIdentifier="fr_FR"/>
@@ -502,12 +523,24 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="iXL-Du-8Ug" userLabel="dureeRepos">
                                         <rect key="frame" x="0.0" y="310" width="404" height="100"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Durée Repos :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggC-MM-U5Z">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="DwT-vX-apt">
                                                 <rect key="frame" x="0.0" y="0.0" width="202" height="100"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Durée Repos :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggC-MM-U5Z">
+                                                        <rect key="frame" x="0.0" y="0.0" width="202" height="40"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="erx-05-J3i" userLabel="reposSwitch">
+                                                        <rect key="frame" x="0.0" y="40" width="204" height="60"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="reposSwitch"/>
+                                                        <connections>
+                                                            <action selector="toggleTimer:" destination="LI8-HR-Cwr" eventType="valueChanged" id="eC7-aO-Kzv"/>
+                                                        </connections>
+                                                    </switch>
+                                                </subviews>
+                                            </stackView>
                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="5" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqP-rE-aqt" userLabel="dureeRepos">
                                                 <rect key="frame" x="202" y="0.0" width="202" height="100"/>
                                                 <locale key="locale" localeIdentifier="fr_FR"/>
@@ -597,6 +630,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="yGI-BE-hXn"/>
                     <connections>
+                        <outlet property="cuissonSwitch" destination="gmC-8H-4co" id="FmM-mS-PAn"/>
                         <outlet property="dureeCuisson" destination="uvm-Gb-Zxz" id="12X-5E-PX3"/>
                         <outlet property="dureePrepa" destination="5kK-nY-hOp" id="b6t-e7-ghP"/>
                         <outlet property="dureeRepos" destination="cqP-rE-aqt" id="zi2-lj-ZrC"/>
@@ -604,6 +638,8 @@
                         <outlet property="ingredientsTV" destination="sZi-zt-Gbx" id="xSe-42-oHM"/>
                         <outlet property="navigationBar" destination="gmk-A8-rlt" id="Pqe-63-MtU"/>
                         <outlet property="nomLabel" destination="SAT-8R-YqN" id="C7C-JY-Ecb"/>
+                        <outlet property="prepaSwitch" destination="SXG-E7-blD" id="RAV-hB-506"/>
+                        <outlet property="reposSwitch" destination="erx-05-J3i" id="J63-48-y30"/>
                         <outlet property="typeRepasPicker" destination="syt-el-ZX4" id="pz5-8U-wky"/>
                     </connections>
                 </viewController>

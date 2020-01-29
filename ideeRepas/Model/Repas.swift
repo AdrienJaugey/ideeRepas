@@ -58,6 +58,14 @@ class Repas {
         self._dureeRepos = dureeRepos
     }
     
+    init(){
+        self._nom = ""
+        self._type = .autre
+        self._dureePreparation = 0
+        self._dureeCuisson = 0
+        self._dureeRepos = 0
+    }
+    
     func getIngredients() -> [String] {
         return self.ingredients
     }
