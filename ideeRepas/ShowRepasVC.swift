@@ -54,26 +54,29 @@ class ShowRepasVC: UIViewController {
             }
             let h = timer / 60
             let m = timer % 60
-            let texte = (h > 0 ? String(h) + " h " : "") + String(m) + " min"
+            var texte = ""
+            if(h == 0 && m == 0){
+                texte = "Aucun" + (i != 2 ? "e" : "")
+            } else {
+                texte = (h > 0 ? String(h) + " h " : "") + String(m) + " min"
+            }
             timerLabel[i].text = texte
         }
         var textIngredient = ""
         for ingre in repas.ingredients {
-            textIngredient += ingre + "\n"
+            textIngredient += "   • " + ingre + "\n"
         }
         if(textIngredient == ""){
             textIngredient = "Aucune donnée"
         }
-        print(textIngredient)
         ingredientsTV.text = textIngredient
         var textEtapes = ""
         for etape in repas.etapes {
-            textEtapes += etape + "\n"
+            textEtapes += "   • " + etape + "\n"
         }
         if(textEtapes == ""){
             textEtapes = "Aucune donnée"
         }
-        print(textEtapes)
         etapesTV.text = textEtapes
     }
     
