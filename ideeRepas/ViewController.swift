@@ -12,6 +12,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     private var gest = Gestionnaire.get()
     @IBOutlet weak var listeRepas: UITableView!
+    @IBOutlet weak var addButton: UIButton!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return gest.getNbRepas()
@@ -31,43 +32,106 @@ class ViewController: UIViewController, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if(editingStyle == .delete){
+            let repas = gest.getRepas(at: indexPath.row)
+            let alert = UIAlertController(title: "Êtes-vous sûr de vouloir supprimer l'entrée suivante : \(repas?.nom ?? "plat") ?", message: "Cette action est irréversible", preferredStyle: .actionSheet)
+
+            alert.addAction(UIAlertAction(title: "Oui", style: .destructive, handler: { action in
+                if(self.gest.removeRepas(id: indexPath.row)){
+                    self.listeRepas.reloadData()
+                }
+            }))
+            alert.addAction(UIAlertAction(title: "Non", style: .cancel, handler: nil))
+
+            self.present(alert, animated: true)
+        }
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let dark = self.traitCollection.userInterfaceStyle == .dark
+        addButton.layer.cornerRadius = addButton.frame.width / 2.0
+        
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(actualiser), name: UIApplication.willEnterForegroundNotification, object: nil)
         
-        // Do any additional setup after loading the view.
-        let test = Repas(nom: "Double Ration de frite", type: Enum_TypeRepas.principal, dureePreparation: 0, dureeCuisson: 10, dureeRepos: 0)
-        test.addIngredient(ingredient: "Patate")
-        test.addIngredient(ingredient: "Sel")
-        test.addEtape(description: "Ouvrir le sachet de frites industrielles.")
-        test.addEtape(description: "Plonger les frites surgelés dans l'huile bouillante pendant 10 minutes.")
-        test.addEtape(description: "Sortir les frites et servir 2 rations.")
-        test.addEtape(description: "Saler comme Salt bae")
-        print(test.getSimpleDescritption())
-        gest.addRepas(test)
+        if(gest.getNbRepas() == 0){
+            print("coucou")
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                let alert = UIAlertController(title: "Aucun plat en mémoire", message: "Commencez par ajouter un plat en utilisant le bouton en haut à droite ou ajoutez un plat par défaut en exemple", preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "Ajouter moi-même un plat", style: .default, handler: { action in
+                    let color = CGColor(srgbRed: (dark ? 255 : 0), green: (dark ? 255 : 0), blue: (dark ? 255 : 0), alpha: 50)
+                    let defaultTint = self.addButton.tintColor
+                    let tint = (dark ? UIColor.black : UIColor.white)
+                    self.addButton.tintColor = tint
+                    UIView.animate(withDuration: 0.5) {
+                        self.addButton.layer.backgroundColor = color
+                        self.addButton.tintColor = tint
+                    }
+                    print(1)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        UIView.animate(withDuration: 0.5) {
+                            self.addButton.layer.backgroundColor = nil
+                            self.addButton.tintColor = defaultTint
+                        }
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                            UIView.animate(withDuration: 0.5) {
+                                self.addButton.layer.backgroundColor = color
+                                self.addButton.tintColor = tint
+                            }
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                UIView.animate(withDuration: 0.5) {
+                                    self.addButton.layer.backgroundColor = nil
+                                    self.addButton.tintColor = defaultTint
+                                }
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                    UIView.animate(withDuration: 0.5) {
+                                        self.addButton.layer.backgroundColor = color
+                                        self.addButton.tintColor = tint
+                                    }
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                        UIView.animate(withDuration: 0.5) {
+                                            self.addButton.layer.backgroundColor = nil
+                                            self.addButton.tintColor = defaultTint
+                                        }
+                                        self.addButton.tintColor = defaultTint
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }))
+                alert.addAction(UIAlertAction(title: "Ajouter un exemple", style: .default, handler: { action in
+                    let platDefaut = Repas(nom: "Tiramisu", type: .dessert, dureePreparation: 30, dureeCuisson: 0, dureeRepos: 240)
+                    platDefaut.addIngredient(ingredient: "Mascarpone")
+                    platDefaut.addIngredient(ingredient: "Sucre")
+                    platDefaut.addIngredient(ingredient: "Oeufs")
+                    platDefaut.addIngredient(ingredient: "Biscuits Cuillères")
+                    platDefaut.addIngredient(ingredient: "Café")
+                    platDefaut.addIngredient(ingredient: "Cacao")
+                    platDefaut.addEtape(description: "Mélanger la mascarpone et le sucre")
+                    platDefaut.addEtape(description: "Battre les blancs en neige")
+                    platDefaut.addEtape(description: "Mélanger délicatement avec la préparation")
+                    self.gest.addRepas(platDefaut)
+                    self.listeRepas.reloadData()
+                }))
+                self.present(alert, animated: true)
+            }
+        }
         
-        let test2 = Repas(nom: "La bonne bouillabaisse", type: Enum_TypeRepas.principal, dureePreparation: 15, dureeCuisson: 60, dureeRepos: 20)
-        test2.addIngredient(ingredient: "pommes de terre")
-        test2.addIngredient(ingredient: "Poissons de roche")
-        //test2.addEtape(description: "Balancer le tout par la fenêtre")
-        print(test.getSimpleDescritption())
-        gest.addRepas(test2)
-        
-        let test3 = Repas(nom: "Tiramisu", type: .dessert, dureePreparation: 30, dureeCuisson: 0, dureeRepos: 240)
-        test3.addIngredient(ingredient: "Mascarpone")
-        test3.addIngredient(ingredient: "Sucre")
-        test3.addIngredient(ingredient: "Oeufs")
-        test3.addIngredient(ingredient: "Biscuits Cuillères")
-        test3.addIngredient(ingredient: "Café")
-        test3.addIngredient(ingredient: "Cacao")
-        test3.addEtape(description: "Mélanger la mascarpone et le sucre")
-        test3.addEtape(description: "Battre les blancs en neige")
-        test3.addEtape(description: "Mélanger délicatement avec la préparation")
-        gest.addRepas(test3)
         self.listeRepas.dataSource = self
+    }
+    
+    @objc func ajoutDefaut(){
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

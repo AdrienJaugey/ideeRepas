@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Repas {
+class Repas: Codable {
     
     private var _nom: String
     var nom: String {
@@ -99,6 +99,27 @@ class Repas {
             }
         }
         return desc
+    }
+    
+    static func ==(left: Repas, right: Repas) -> Bool {
+        var res = left._nom == right._nom
+        res = res && left._type == right._type
+        res = res && left._dureePreparation == right._dureePreparation
+        res = res && left._dureeCuisson == right._dureeCuisson
+        res = res && left._dureeRepos == right._dureeRepos
+        res = res && left.ingredients.count == right.ingredients.count
+        if res {
+            for i in 0...left.ingredients.count {
+                res = res && left.ingredients[i] == right.ingredients[i]
+            }
+        }
+        res = res && left.etapes.count == right.etapes.count
+        if res {
+            for i in 0...left.etapes.count {
+                res = res && left.etapes[i] == right.etapes[i]
+            }
+        }
+        return res
     }
     
 }

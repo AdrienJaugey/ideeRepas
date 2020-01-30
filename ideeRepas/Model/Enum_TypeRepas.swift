@@ -6,7 +6,7 @@
 //  Copyright © 2019 Adrien Jaugey. All rights reserved.
 //
 
-enum Enum_TypeRepas: String {
+enum Enum_TypeRepas: String, Codable {
     case entree = "Entrée"
     case principal = "Plat Principal"
     case dessert = "Dessert"

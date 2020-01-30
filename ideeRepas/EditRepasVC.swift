@@ -50,6 +50,10 @@ class EditRepasVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        self.view.addGestureRecognizer(tap)
+        
         ingredientsTV.layer.borderColor = CGColor(srgbRed: 192, green: 192, blue: 192, alpha: 50)
         etapesTV.layer.borderColor = CGColor(srgbRed: 192, green: 192, blue: 192, alpha: 50)
         self.typeRepasPicker.delegate = self

@@ -26,6 +26,15 @@ class ShowRepasVC: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    @objc func rotate(){
+        let rotation: CABasicAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
+        rotation.toValue = Double.pi * 2
+        rotation.duration = 0.250 // or however long you want ...
+        rotation.isCumulative = false
+        rotation.repeatCount = 4//Float.greatestFiniteMagnitude
+        self.typeImage.layer.add(rotation, forKey: "rotationAnimation")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,6 +45,9 @@ class ShowRepasVC: UIViewController {
         nomLabel.text = repas.nom
         typeLabel.text = repas.type.rawValue
         typeImage.image = UIImage(named: "\(repas.type)" + (dark ? "_dark" : "") + ".png")
+        typeImage.isUserInteractionEnabled = true
+        let tap = UITapGestureRecognizer(target: self, action: #selector(rotate))
+        typeImage.addGestureRecognizer(tap)
         let clockPicture = "UI_icon_clock" + (dark ? "_dark" : "") + ".png"
         for clock in clockImage {
             clock.image = UIImage(named: clockPicture)

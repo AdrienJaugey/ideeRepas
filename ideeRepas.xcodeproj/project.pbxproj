@@ -31,6 +31,7 @@
 		F05A6F8A23E06D6B0027D33D /* principal_dark.png in Resources */ = {isa = PBXBuildFile; fileRef = F05A6F8623E06D6B0027D33D /* principal_dark.png */; };
 		F05A6F8D23E06F880027D33D /* UI_icon_clock.png in Resources */ = {isa = PBXBuildFile; fileRef = F05A6F8B23E06F880027D33D /* UI_icon_clock.png */; };
 		F05A6F8E23E06F880027D33D /* UI_icon_clock_dark.png in Resources */ = {isa = PBXBuildFile; fileRef = F05A6F8C23E06F880027D33D /* UI_icon_clock_dark.png */; };
+		F0A007FF23E3765C00E87C62 /* UserManualVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A007FE23E3765C00E87C62 /* UserManualVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		F05A6F8623E06D6B0027D33D /* principal_dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = principal_dark.png; path = Images/principal_dark.png; sourceTree = "<group>"; };
 		F05A6F8B23E06F880027D33D /* UI_icon_clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = UI_icon_clock.png; path = Images/UI_icon_clock.png; sourceTree = "<group>"; };
 		F05A6F8C23E06F880027D33D /* UI_icon_clock_dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = UI_icon_clock_dark.png; path = Images/UI_icon_clock_dark.png; sourceTree = "<group>"; };
+		F0A007FE23E3765C00E87C62 /* UserManualVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManualVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				7886ABD523C3750E008BA3E5 /* Gestionnaire.swift */,
 				78C14AE623D5ACC3001C670A /* EditRepasVC.swift */,
 				78C14AE823D5C2F3001C670A /* ShowRepasVC.swift */,
+				F0A007FE23E3765C00E87C62 /* UserManualVC.swift */,
 			);
 			path = ideeRepas;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 				7AD5AEF623AA354E00987625 /* AppDelegate.swift in Sources */,
 				78F22F1523AB895700098837 /* Enum_TypeRepas.swift in Sources */,
 				7AD5AEF823AA354E00987625 /* SceneDelegate.swift in Sources */,
+				F0A007FF23E3765C00E87C62 /* UserManualVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
