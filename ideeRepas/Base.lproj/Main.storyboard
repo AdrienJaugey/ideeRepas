@@ -223,8 +223,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Un easter egg est caché quelque part, parviendrez-vous à le trouver ? 😉" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wEs-DX-psD">
-                                <rect key="frame" x="5" y="700" width="404" height="88"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Un easter egg est caché quelque part, parviendrez-vous à le trouver ? 😉" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wEs-DX-psD" userLabel="easterEggDesc">
+                                <rect key="frame" x="5" y="680" width="404" height="128"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
@@ -244,14 +244,14 @@
                             <constraint firstItem="hfk-Bp-lQ6" firstAttribute="leading" secondItem="7Mb-4F-JQR" secondAttribute="leading" id="H0N-nc-O6d"/>
                             <constraint firstItem="6ye-Fu-wDg" firstAttribute="top" secondItem="AdM-jf-BEA" secondAttribute="bottom" id="IJN-Zu-z6Q"/>
                             <constraint firstItem="Gjc-Vc-AsS" firstAttribute="leading" secondItem="7Mb-4F-JQR" secondAttribute="leading" constant="5" id="Jvg-aI-buU"/>
-                            <constraint firstItem="7Mb-4F-JQR" firstAttribute="bottom" secondItem="wEs-DX-psD" secondAttribute="bottom" constant="20" id="K7A-PV-dry"/>
+                            <constraint firstItem="7Mb-4F-JQR" firstAttribute="bottom" secondItem="wEs-DX-psD" secondAttribute="bottom" id="K7A-PV-dry"/>
                             <constraint firstItem="7Mb-4F-JQR" firstAttribute="trailing" secondItem="ubY-ge-UbC" secondAttribute="trailing" id="LBD-TB-bbv"/>
                             <constraint firstItem="biO-CK-4Oe" firstAttribute="leading" secondItem="7Mb-4F-JQR" secondAttribute="leading" constant="5" id="MSk-fo-S6o"/>
                             <constraint firstItem="7Mb-4F-JQR" firstAttribute="trailing" secondItem="bJE-z4-407" secondAttribute="trailing" constant="5" id="N8s-kr-0Jt"/>
                             <constraint firstItem="bJE-z4-407" firstAttribute="leading" secondItem="7Mb-4F-JQR" secondAttribute="leading" constant="5" id="NS6-Ki-8sf"/>
                             <constraint firstItem="8D0-1e-Uhd" firstAttribute="top" secondItem="ubY-ge-UbC" secondAttribute="bottom" id="QDc-aH-5by"/>
                             <constraint firstItem="AdM-jf-BEA" firstAttribute="top" secondItem="8D0-1e-Uhd" secondAttribute="bottom" id="SEf-dg-WSI"/>
-                            <constraint firstItem="wEs-DX-psD" firstAttribute="top" secondItem="biO-CK-4Oe" secondAttribute="bottom" constant="20" id="VnB-Ja-jXv"/>
+                            <constraint firstItem="wEs-DX-psD" firstAttribute="top" secondItem="biO-CK-4Oe" secondAttribute="bottom" id="VnB-Ja-jXv"/>
                             <constraint firstItem="wEs-DX-psD" firstAttribute="leading" secondItem="7Mb-4F-JQR" secondAttribute="leading" constant="5" id="ZcV-Ew-cYo"/>
                             <constraint firstItem="7Mb-4F-JQR" firstAttribute="trailing" secondItem="0L1-hg-iSK" secondAttribute="trailing" constant="5" id="akI-ce-cOa"/>
                             <constraint firstItem="8D0-1e-Uhd" firstAttribute="leading" secondItem="7Mb-4F-JQR" secondAttribute="leading" constant="5" id="bVq-vs-Lrk"/>

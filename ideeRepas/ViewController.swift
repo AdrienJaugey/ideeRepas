@@ -39,14 +39,14 @@ class ViewController: UIViewController, UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if(editingStyle == .delete){
             let repas = gest.getRepas(at: indexPath.row)
-            let alert = UIAlertController(title: "Êtes-vous sûr de vouloir supprimer l'entrée suivante : \(repas?.nom ?? "plat") ?", message: "Cette action est irréversible", preferredStyle: .actionSheet)
+            let alert = UIAlertController(title: "Vous allez supprimer l'entrée suivante : \(repas?.nom ?? "plat") ?", message: "Cette action est irréversible", preferredStyle: .actionSheet)
 
-            alert.addAction(UIAlertAction(title: "Oui", style: .destructive, handler: { action in
+            alert.addAction(UIAlertAction(title: "Supprimer", style: .destructive, handler: { action in
                 if(self.gest.removeRepas(id: indexPath.row)){
                     self.listeRepas.reloadData()
                 }
             }))
-            alert.addAction(UIAlertAction(title: "Non", style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "Annuler", style: .cancel, handler: nil))
 
             self.present(alert, animated: true)
         }
@@ -57,17 +57,19 @@ class ViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         
         let dark = self.traitCollection.userInterfaceStyle == .dark
-        addButton.layer.cornerRadius = addButton.frame.width / 2.0
+        addButton.layer.cornerRadius = 5
         
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(actualiser), name: UIApplication.willEnterForegroundNotification, object: nil)
         
+        //Popup au démarrage si aucun plat en mémoire
         if(gest.getNbRepas() == 0){
-            print("coucou")
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 let alert = UIAlertController(title: "Aucun plat en mémoire", message: "Commencez par ajouter un plat en utilisant le bouton en haut à droite ou ajoutez un plat par défaut en exemple", preferredStyle: .alert)
                 
                 alert.addAction(UIAlertAction(title: "Ajouter moi-même un plat", style: .default, handler: { action in
+                    //Animation (Bouton d'ajout de plat clignote trois fois
+                    //Pas très propre mais une boucle for éxecute toutes les animations d'un coup
                     let color = CGColor(srgbRed: (dark ? 255 : 0), green: (dark ? 255 : 0), blue: (dark ? 255 : 0), alpha: 50)
                     let defaultTint = self.addButton.tintColor
                     let tint = (dark ? UIColor.black : UIColor.white)
@@ -76,7 +78,6 @@ class ViewController: UIViewController, UITableViewDataSource {
                         self.addButton.layer.backgroundColor = color
                         self.addButton.tintColor = tint
                     }
-                    print(1)
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                         UIView.animate(withDuration: 0.5) {
                             self.addButton.layer.backgroundColor = nil
@@ -110,16 +111,18 @@ class ViewController: UIViewController, UITableViewDataSource {
                     }
                 }))
                 alert.addAction(UIAlertAction(title: "Ajouter un exemple", style: .default, handler: { action in
-                    let platDefaut = Repas(nom: "Tiramisu", type: .dessert, dureePreparation: 30, dureeCuisson: 0, dureeRepos: 240)
-                    platDefaut.addIngredient(ingredient: "Mascarpone")
-                    platDefaut.addIngredient(ingredient: "Sucre")
-                    platDefaut.addIngredient(ingredient: "Oeufs")
-                    platDefaut.addIngredient(ingredient: "Biscuits Cuillères")
-                    platDefaut.addIngredient(ingredient: "Café")
-                    platDefaut.addIngredient(ingredient: "Cacao")
-                    platDefaut.addEtape(description: "Mélanger la mascarpone et le sucre")
-                    platDefaut.addEtape(description: "Battre les blancs en neige")
-                    platDefaut.addEtape(description: "Mélanger délicatement avec la préparation")
+                    //On crée le plat par défaut et l'enregistre
+                    let platDefaut = Repas(nom: "Cookies aux 2 pépites", type: .dessert, dureePreparation: 30, dureeCuisson: 12, dureeRepos: 5)
+                    platDefaut.addIngredient(ingredient: "100g de pépites de chocolat noir et blanc")
+                    platDefaut.addIngredient(ingredient: "120g de beurre")
+                    platDefaut.addIngredient(ingredient: "120g de cassonade")
+                    platDefaut.addIngredient(ingredient: "180g de farine")
+                    platDefaut.addIngredient(ingredient: "1 gros œuf")
+                    platDefaut.addIngredient(ingredient: "30g de noix de coco en poudre")
+                    platDefaut.addIngredient(ingredient: "1 c. à café de levure chimique")
+                    platDefaut.addEtape(description: "Préchauffer le four à 180°C (th. 6). Faire fondre le beurre fondu refroidi avec la cassonade et l'œuf entier. Incorporer la farine avec la levure, la noix de coco et les pépites.")
+                    platDefaut.addEtape(description: "Prélever des grosses noix de pâte et les poser sur une plaque tapissée de papier cuisson. Les aplatir un peu avec le dos d'une cuillère.")
+                    platDefaut.addEtape(description: "Enfourner 10 à 12 min, décoller les cookies à la spatule, les laisser refroidir sur une grille avant de servir.")
                     self.gest.addRepas(platDefaut)
                     self.listeRepas.reloadData()
                 }))
@@ -154,6 +157,7 @@ class ViewController: UIViewController, UITableViewDataSource {
             }
             repas.nom = sourceVC.nomLabel.text!
             repas.type = Enum_TypeRepas.allValues[sourceVC.typeRepasPicker.selectedRow(inComponent: 0)]
+            print("Sauvegarde : \(repas.type)")
             repas.dureePreparation = Int(sourceVC.prepaSwitch.isOn ? sourceVC.dureePrepa.countDownDuration / 60: 0)
             repas.dureeCuisson = Int(sourceVC.cuissonSwitch.isOn ? sourceVC.dureeCuisson.countDownDuration / 60: 0)
             repas.dureeRepos = Int(sourceVC.reposSwitch.isOn ? sourceVC.dureeRepos.countDownDuration / 60 : 0)

@@ -36,7 +36,7 @@ class UserManualVC: UIViewController {
         editerDesc.text = "\tLorsque vous consultez un repas, cliquez sur le bouton \"Éditer\" en haut à droite. La suite est similaire à l'ajout d'un repas."
         
         supprimerTitre.text = " • Pour supprimer un repas :"
-        supprimerDesc.text = "\tSur la vue principale effectuez un swipe vers la gauche sur le repas que vous voulez supprimer. Il ne vous reste plus qu'à valider ou non la suppression."
+        supprimerDesc.text = "\tSur la vue principale, effectuez un swipe vers la gauche sur le repas que vous voulez supprimer. Il ne vous reste plus qu'à valider ou non la suppression."
     }
     
 }

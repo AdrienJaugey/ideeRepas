@@ -122,4 +122,8 @@ class Repas: Codable {
         return res
     }
     
+    static func >(left: Repas, right: Repas) -> Bool {
+        return left._nom > right._nom
+    }
+    
 }
