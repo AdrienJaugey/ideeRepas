@@ -186,6 +186,9 @@ class ViewController: UIViewController, UITableViewDataSource {
     @objc func actualiser(){
         if let tv = listeRepas {
             tv.reloadData()
+            if gest.getNbRepas() == 0 {
+                popupAucunPlat()
+            }
         }
     }
 }
