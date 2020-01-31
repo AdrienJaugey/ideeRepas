@@ -16,6 +16,7 @@ class Gestionnaire {
         //On récupère le tableau stocké dans la mémoire ou on en initialise un nouveau s'il n'en existe pas en mémoire
         let defaults = UserDefaults.standard
         if let savedRepas = defaults.object(forKey: "savedRepas") as? Data {
+            //print("json saved " + String(data: savedRepas, encoding: .utf8)!)
             let decoder = JSONDecoder()
             if let repas = try? decoder.decode([Repas].self, from: savedRepas) {
                 self.repas = repas
@@ -33,6 +34,7 @@ class Gestionnaire {
         return repas.count > at ? repas[at] : nil
     }
     
+    
     func getNbRepas() -> Int {
         return repas.count
     }
@@ -40,21 +42,6 @@ class Gestionnaire {
     func addRepas(_ plat: Repas){
         self.repas.append(plat)
         saveData()
-    }
-    
-    func removeRepas(_ plat: Repas) -> Bool{
-        var index = -1
-        for i in 0...repas.count {
-            if repas[i] == plat {
-                index = i
-            }
-        }
-        if index != -1 {
-            repas.remove(at: index)
-            saveData()
-            return true
-        }
-        return false
     }
     
     func removeRepas(id: Int) -> Bool{
@@ -69,10 +56,16 @@ class Gestionnaire {
     func saveData(){
         let defaults = UserDefaults.standard
         if repas.count > 0 {
+            repas.sort { (r1, r2) -> Bool in
+                return r2 > r1
+            }
             let encoder = JSONEncoder()
             if let encoded = try? encoder.encode(repas) {
+                //print("json saving " + String(data: encoded, encoding: .utf8)!)
                 let defaults = UserDefaults.standard
                 defaults.set(encoded, forKey: "savedRepas")
+            } else {
+                print("json encoding failed")
             }
         } else {
             defaults.removeObject(forKey: "savedRepas")

@@ -649,7 +649,7 @@
                                                     <constraint firstItem="IqM-QG-1RD" firstAttribute="leading" secondItem="OFd-9s-46e" secondAttribute="leading" id="ZE7-Tu-Qdc"/>
                                                 </constraints>
                                             </stackView>
-                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="5" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5kK-nY-hOp">
+                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5kK-nY-hOp">
                                                 <rect key="frame" x="202" y="0.0" width="202" height="100"/>
                                                 <locale key="locale" localeIdentifier="fr_FR"/>
                                             </datePicker>
@@ -679,7 +679,7 @@
                                                     </switch>
                                                 </subviews>
                                             </stackView>
-                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="5" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uvm-Gb-Zxz" userLabel="dureeCuisson">
+                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uvm-Gb-Zxz" userLabel="dureeCuisson">
                                                 <rect key="frame" x="202" y="0.0" width="202" height="100"/>
                                                 <locale key="locale" localeIdentifier="fr_FR"/>
                                             </datePicker>
@@ -709,7 +709,7 @@
                                                     </switch>
                                                 </subviews>
                                             </stackView>
-                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="5" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqP-rE-aqt" userLabel="dureeRepos">
+                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqP-rE-aqt" userLabel="dureeRepos">
                                                 <rect key="frame" x="202" y="0.0" width="202" height="100"/>
                                                 <locale key="locale" localeIdentifier="fr_FR"/>
                                             </datePicker>

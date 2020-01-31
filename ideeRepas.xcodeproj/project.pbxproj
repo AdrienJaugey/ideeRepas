@@ -45,7 +45,7 @@
 		78F22F1023AB885600098837 /* RepasCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepasCell.swift; sourceTree = "<group>"; };
 		78F22F1223AB88C600098837 /* Repas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Repas.swift; path = Model/Repas.swift; sourceTree = "<group>"; };
 		78F22F1423AB895700098837 /* Enum_TypeRepas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Enum_TypeRepas.swift; path = Model/Enum_TypeRepas.swift; sourceTree = "<group>"; };
-		7AD5AEF223AA354E00987625 /* ideeRepas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ideeRepas.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7AD5AEF223AA354E00987625 /* Idée Repas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Idée Repas.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AD5AEF523AA354E00987625 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7AD5AEF723AA354E00987625 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7AD5AEF923AA354E00987625 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -86,7 +86,7 @@
 		7AD5AEF323AA354E00987625 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7AD5AEF223AA354E00987625 /* ideeRepas.app */,
+				7AD5AEF223AA354E00987625 /* Idée Repas.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -141,7 +141,7 @@
 			);
 			name = ideeRepas;
 			productName = ideeRepas;
-			productReference = 7AD5AEF223AA354E00987625 /* ideeRepas.app */;
+			productReference = 7AD5AEF223AA354E00987625 /* Idée Repas.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -371,7 +371,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ajaugey.ideeRepas;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Idée Repas";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -393,7 +393,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ajaugey.ideeRepas;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Idée Repas";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
